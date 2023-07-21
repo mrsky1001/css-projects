@@ -10,3 +10,4 @@ https://mrsky1001.github.io/layout-projects/
 ### 4. progress-bar-line-animation
 ### 5. radial-scroll-bar
 ### 6. responsive-card
+### 7. rotating-image-gallery
