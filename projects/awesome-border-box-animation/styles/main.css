@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --dark: #0c1022;
+    --dark-bg:rgba(0, 0, 0, 0.75);
+    --light: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    height: 100vh;
+}
+
+.box{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: var(--dark-bg); 
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent, #00ccff);
+    animation: animate 4s linear infinite;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent, #d400d4);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+
+.box span{
+    position: absolute;
+    inset: 5px;
+    border-radius: 16px;
+    z-index: 1; 
+    background: var(--dark);
+}
+
+.box h2{
+    color: var(--light);
+    font-size: 10em;
+    z-index: 1;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg) ;
+    }
+    100%{
+        transform: rotate(360deg) ;
+    }
+}
+
+.box-side.num1{
+    position: absolute;
+    top: -10%;
+    left: -5%;
+}
+
+.box-side.num2{
+    position: absolute;
+    top: -10%;
+    left: 80%;
+}
+
+.box-side.num2::after{
+    animation: animate 3s linear infinite;
+    
+}
+
+.box-side.num3{
+    position: absolute;
+    top: 90%;
+    left: 90%;
+}
+
+.box-side.num4{
+    position: absolute;
+    top: 90%;
+    left: 20%;
+}
+.box-side.num4::after{
+    animation: animate 10s linear infinite;
+    
+}
+
+
+.box-side.num5{
+    position: absolute;
+    top: 60%;
+    left: -10%;
+}
+
+.box-side.num6{
+    position: absolute;
+    top: 30%;
+    right: -10%;
+}
+
+.box-side.num6::after{
+    animation: animate 7s linear infinite;
+    
+}

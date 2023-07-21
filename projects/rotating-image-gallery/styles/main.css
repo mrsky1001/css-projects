@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900'); */
+
+@font-face {
+    font-family: 'wanted';
+    src: url("72-font.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'wanted', sans-serif;
+}
+
+:root {
+    --dark: #101113;
+    --light: #fff;
+    --red: rgb(80, 0, 0);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark);
+}
+
+h2 {
+ color: white;
+ font-size: 12em;
+ margin-bottom: 300px;
+ animation: color-change 4s infinite;
+}
+
+
+@keyframes color-change {
+    0% { color: var(--red); }
+    10% { color: white; }
+    100% { color: var(--red); }
+  }
+
+.box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 50s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.box span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform-origin: center;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(500px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent, #0004);
+    border-bottom: 5px solid transparent;
+    filter: saturate(0) blur(2px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 5px;
+    transition: transform 5s ;
+
+}
+
+.box span:hover {
+    /* border-bottom: 5px solid var(--red); */
+    transition: 0.3s all;
+    filter: saturate(1) blur(0px);
+}
+
+.box span h3 {
+    padding: 2px 6px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color:  var(--red);
+    border: 2px solid var(--red);
+    position: absolute;
+    font-size: 2em;
+    transform: rotate(calc(2deg*var(--i)));
+    z-index: 1;
+}
+
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 5s border box-shadow;
+}
+
+.box span img:hover{
+    box-shadow: 0 5px 20px white;
+    transition: 0.5s all;
+}
