@@ -9,3 +9,4 @@ https://mrsky1001.github.io/layout-projects/
 ### 3. magic-navigation-bars
 ### 4. progress-bar-line-animation
 ### 5. radial-scroll-bar
+### 6. responsive-card
