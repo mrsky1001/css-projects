@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --active: #29c2fd;
+    --active2: #29fd9a;
+    --dark: #0a2a43;
+    --dark2: #24262e;
+    --light: #fff;
+
+}
+
+body {
+    background: var(--dark);
+    min-height: 1500px;
+}
+
+.start-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.start-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top , var(--dark), transparent);
+    z-index: 10000;
+}
+
+.start-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+    mix-blend-mode: color;
+    z-index: 10000;
+}
+
+.start-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#start-header  {
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    margin-bottom: 220px;
+    z-index: 1;
+    padding: 20px;
+}
+
+#road  {
+    z-index: 2;
+}
+
+#mountain  {
+    z-index: 2;
+}
+
+.projects-section{
+    padding: 100px 50px;
+}
+
+#projects-header  {
+    position: relative;
+    color: #fff;
+    font-size: 5em;
+    margin-bottom: 220px;
+    z-index: 1;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.column{
+    max-width: 50vw;
+    padding: 25px 100px;
+}
+
+.card{
+    position: relative;
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.card.magic-navs{
+    /* background-image: url('../assets/projects/magic-nagiations.png'); */
+    min-height: 700px;
+}
+
+.project-img{
+    max-height: 700px;
+    max-width: 700px;
+    border-radius: 15px;
+    filter: saturate(0) blur(1px);
+    border: 3px  solid transparent;
+    border-top: 0;
+
+    transition: 0.5s all;
+    z-index: 2;
+
+}
+
+.project-img:hover{
+    filter: saturate(1) blur(0px);
+    border: 3px solid var(--light);
+    border-top: 0;
+    cursor: pointer;
+    transition: 0.5s all;
+    box-shadow: 0 3px 10px #fff
+}
+
+.project-description{
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+}
+
+.project-header{
+    font-size: 2em;
+    padding: 15px;
+}
+
+@media (max-width:800px) {
+    #start-header{
+        font-size: 2.6em;
+    }
+
+    #projects-header  {
+        font-size: 2em;
+    }
+
+    .project-header{
+        font-size: 1em;
+    }
+
+    .project-img, .column {
+        max-width: 70vw;
+    }
+
+    .column{
+        padding: 0;
+    }
+    
+    a{
+        min-height: 10vh;
+
+    }
+
+    .row{
+        padding: 0;
+    }
+
+}
+
+/* snow SCSS*/
+/* body {
+    height: 100vh;
+   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    filter: drop-shadow(0 0 10px white);
+ }
+ 
+ @function random_range($min, $max) {
+   $rand: random();
+   $random_range: $min + floor($rand * (($max - $min) + 1));
+   @return $random_range;
+ }
+ 
+ .snow {
+    z-index: 1;
+   $total: 200;
+   position: absolute;
+   width: 10px;
+   height: 10px;
+   background: white;
+   border-radius: 50%;
+ 
+   @for $i from 1 through $total {
+     $random-x: random(1000000) * 0.0001vw;
+     $random-offset: random_range(-100000, 100000) * 0.0001vw;
+     $random-x-end: $random-x + $random-offset;
+     $random-x-end-yoyo: $random-x + ($random-offset / 2);
+     $random-yoyo-time: random_range(30000, 80000) / 100000;
+     $random-yoyo-y: $random-yoyo-time * 100vh;
+     $random-scale: random(10000) * 0.0001;
+     $fall-duration: random_range(10, 30) * 1s;
+     $fall-delay: random(30) * -1s;
+ 
+     &:nth-child(#{$i}) {
+       opacity: random(10000) * 0.0001;
+       transform: translate($random-x, -10px) scale($random-scale);
+       animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+     }
+ 
+     @keyframes fall-#{$i} {
+       #{percentage($random-yoyo-time)} {
+         transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+       }
+ 
+       to {
+         transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+       }
+     }
+   }
+ }
+  */
