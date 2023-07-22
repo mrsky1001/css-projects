@@ -1,2 +1,5 @@
 yarn.lock
 .idea
+dist
+cache
+node_modules
