@@ -11,3 +11,4 @@ https://mrsky1001.github.io/layout-projects/
 ### 5. radial-scroll-bar
 ### 6. responsive-card
 ### 7. rotating-image-gallery
+### 8. text-and-fog
